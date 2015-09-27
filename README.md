@@ -1,2 +1,2 @@
-# react-shell
-A simple boilerplate setup for a simple react app
+# Hikoo UI
+A static asset version of the hikoo.us UI WIP
