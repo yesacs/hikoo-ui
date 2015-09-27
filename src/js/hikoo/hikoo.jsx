@@ -1,7 +1,7 @@
 'use strict';
 import React from 'react';
 
-const DEEP_LINK_URL = 'http://hikoo.us/show/'
+const DEEP_LINK_URL = 'http://hikoo.us/show/';
 
 export class Hikoo extends React.Component {
     constructor(props) {
