@@ -1,0 +1,41 @@
+{
+  "name": "react-shell",
+  "version": "0.0.0",
+  "description": "A shell for react apps",
+  "main": "index.js",
+  "repository": {
+    "type": "git"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "reactify"
+    ]
+  },
+  "scripts": {
+    "lint": "eslint ./src/js/*",
+    "watch": "watchify ./src/js/app.jsx -v -d -o ./dist/bundle.js",
+    "prestart": "npm run lint; rm -rf dist; mkdir -p dist",
+    "start": "npm run watch",
+    "server": "eslint ./src/js/*; beefy ./src/js/app.jsx:bundle.js --open",
+    "build": "browserify ./src/js/app.jsx | uglifyjs -cm > ./dist/bundle.min.js",
+    "reinstall": "rm -rf ./node_modules; npm install",
+    "boot": "npm run reinstall; npm run server"
+  },
+  "dependencies": {
+    "babel-eslint": "^4.0.0",
+    "babelify": "^6.1.3",
+    "beefy": "^2.1.5",
+    "bootstrap-sass": "^3.3.5",
+    "browserify": "^11.0.0",
+    "classnames": "^2.1.3",
+    "eslint": "^0.24.1",
+    "eslint-plugin-react": "^3.0.0",
+    "keymirror": "^0.1.1",
+    "lodash": "^3.9.3",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "uglify-js": "^2.4.24",
+    "watchify": "^3.3.0"
+  }
+}
