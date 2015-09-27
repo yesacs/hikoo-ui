@@ -8,12 +8,11 @@
   },
   "browserify": {
     "transform": [
-      "babelify",
-      "reactify"
+      "babelify"
     ]
   },
   "scripts": {
-    "lint": "eslint ./src/js/*",
+    "lint": "eslint ./src/js/**/*.*",
     "watch-js": "watchify ./src/js/app.jsx -v -d -o ./dist/bundle.js",
     "watch-css": "node-sass --watch ./src/scss/app.scss -o ./dist/css",
     "watch": "concurrent --kill-others --prefix command --prefix-length 50 \"npm run watch-css\" \"npm run watch-js\"",

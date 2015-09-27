@@ -6,7 +6,8 @@
             "line1": "white water murmur",
             "line2": "produce my delicate drool",
             "line3": "black symphony moan",
-            "user-id": "3"
+            "userId": "3",
+            "userName": "casey"
         },
         {
             "created-at": "2012-07-17T01:51:48Z",
@@ -14,7 +15,8 @@
             "line1": "8 minutes from now,",
             "line2": "You will be eaten by plants.",
             "line3": "My precious son beam.",
-            "user-id": "3"
+            "userId": "3",
+            "userName": "casey"
         },
         {
             "created-at": "2011-02-01T15:26:46Z",
@@ -22,7 +24,8 @@
             "line1": "\"Twenty Eleven:",
             "line2": "Year of the Linux Desktop\"",
             "line3": "See you all next year",
-            "user-id": "3"
+            "userId": "3",
+            "userName": "casey"
         }
     ]
 }

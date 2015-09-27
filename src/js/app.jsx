@@ -1,3 +1,4 @@
+'use strict';
 import React from 'react';
 import HikooList from './hikoo/list.jsx';
 import HikooData from '../hikoos.json';

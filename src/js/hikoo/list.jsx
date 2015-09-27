@@ -7,18 +7,30 @@ export class HikooList extends React.Component {
     constructor(props) {
         super(props);
     }
-
     buildHikoos(){
-        return _.map(this.props.hikoos, function (h){
+        return _.map([this.props.hikoos[0]], function (h){
             return (
-                <Hikoo key={h.id} hikoo={h} />
+                <li key={h.id}>
+                    <Hikoo hikoo={h} />
+                </li>
             );
         });
     }
-
     render() {
         return (
-            <ul>{this.buildHikoos()}</ul>
+            <section>
+                <header className="clearfix">
+                    <span className="left">Hikoo</span>
+                    <span className="right"><a href="#">Login</a></span>
+                </header>
+
+                <ul className="hikoo-list">{this.buildHikoos()}</ul>
+
+                <footer>
+                    <span className="left"><a href="#">&lt;</a> The leaves change</span>
+                    <span className="right">8 minutes from now <a href="#">&gt;</a></span>
+                </footer>
+            </section>
         );
     }
 }
