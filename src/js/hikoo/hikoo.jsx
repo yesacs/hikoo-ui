@@ -17,7 +17,7 @@ export class Hikoo extends React.Component {
                 <p className="line3">{h.line3}</p>
                 <br /><br />
                 <p className="author">
-                    &ndash; {h.userName} <a href={DEEP_LINK_URL + h.id}>#</a>
+                    &ndash; {h.user_id} <a href={DEEP_LINK_URL + h.id} target="_blank">#</a>
                 </p>
             </div>
         );
