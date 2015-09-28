@@ -1,13 +1,13 @@
 # Hikoo UI
-A WIP for a static asset version of the hikoo.us UI. With node installed, check
-it out and run ``` npm start ```
+A WIP for a static asset version of the hikoo.us UI. Everything is done with
+NPM scripts, ie no grunt or gulp.
 
 
-### Other commands
+### Commands
 
-#### npm run lint
-Uses eslint to lint the js/jsx files in the project. An .eslintrc is included
-in the project
+#### npm start
+Downloads all the needed NPM packages, lints, builds js and css, and finally
+starts a webserver serving the included ``` index.html ```
 
 #### npm run watch
 Will watch both app.scss and js/jsx files in the src directory and create the
@@ -22,3 +22,10 @@ command will spawn its own watchers.
 #### npm run build
 A short cut to make the minified browserify js build and css build for
 production.
+
+#### npm run lint
+Uses eslint to lint the js/jsx files in the project. An .eslintrc is included
+in the project
+
+#### npm run clean
+Deletes the node_modules dir and reruns ``` npm install ```

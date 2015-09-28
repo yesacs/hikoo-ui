@@ -22,8 +22,8 @@
     "build-js": "browserify ./src/js/app.jsx | uglifyjs -cm > ./dist/bundle.min.js",
     "build-css": "node-sass ./src/scss/app.scss -o ./dist/css",
     "build": "npm run lint && npm run build-js && npm run build-css",
-    "reinstall": "rm -rf ./node_modules && npm install",
-    "start": "npm run reinstall && npm run build-css && npm run server"
+    "clean": "rm -rf ./node_modules && npm install",
+    "start": "npm install && npm run build-css && npm run server"
   },
   "dependencies": {
     "babel-eslint": "^4.0.0",
