@@ -16,7 +16,7 @@
     "watch-js": "watchify ./src/js/app.jsx -v -d -o ./dist/bundle.js",
     "watch-css": "node-sass --watch ./src/scss/app.scss -o ./dist/css",
     "watch": "concurrent --kill-others --prefix command --prefix-length 50 \"npm run watch-css\" \"npm run watch-js\"",
-    "prestart": "npm run lint && rm -rf dist && mkdir -p dist",
+    "prestart": "rm -rf dist && mkdir -p dist",
     "beefy": "beefy ./src/js/app.jsx:bundle.js --open --cw .",
     "server": "eslint ./src/js/* && concurrent --kill-others --prefix command --prefix-length 50 \"npm run watch-css\" \"npm run beefy\"",
     "build-js": "browserify ./src/js/app.jsx | uglifyjs -cm > ./dist/bundle.min.js",
