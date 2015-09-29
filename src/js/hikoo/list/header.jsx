@@ -14,4 +14,8 @@ export class Header extends React.Component {
     }
 }
 
+Header.propTypes = {
+    userName: React.PropTypes.string
+};
+
 export default Header;

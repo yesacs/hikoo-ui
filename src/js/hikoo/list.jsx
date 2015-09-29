@@ -34,7 +34,6 @@ export class HikooList extends React.Component {
     setSelectedHikooIndex(newIndex){
         this.setState({selectedHikooIndex: newIndex});
     }
-
     render() {
         var self = this,
             hikoo = (function (){
