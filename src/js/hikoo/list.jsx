@@ -6,7 +6,6 @@ import Hikoo from './hikoo.jsx';
 import Header from './list/header.jsx';
 import Footer from './list/footer.jsx';
 
-import _ from 'lodash';
 import jsonp from 'browser-jsonp';
 
 const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
@@ -21,15 +20,6 @@ export class HikooList extends React.Component {
             selectedHikooIndex: 0,
             userName: 'casey'
         };
-    }
-    buildHikoos(){
-        return _.map(this.state.hikoos, function (h){
-            return (
-                <li key={h.haiku.id}>
-
-                </li>
-            );
-        });
     }
     componentWillMount(){
         var self = this;
