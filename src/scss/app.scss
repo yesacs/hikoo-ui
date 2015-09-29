@@ -13,18 +13,12 @@ body{
     background-size: cover;
 }
 
-#hikoos{}
-
-.hikoo-list{
-    list-style: none;
-}
-
 header, footer{
     width: 100%;
     text-align: left;
     padding: 12px;
-    background: #f1f1f1;
-    color: #666;
+    background: #e1e1e1;
+    color: #555;
     font-family: 'Roboto Slab', serif;
 
     .left{
@@ -35,29 +29,30 @@ header, footer{
     }
 }
 header{
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #d1d1d1;
 }
 footer{
     position: absolute;
     bottom: 0;
-    border-top: 1px solid #e1e1e1;
+    border-top: 1px solid #d1d1d1;
 
     a{
         font-size: 18px;
         line-height: 12px;
+        padding: 0 6px;
     }
 }
 
 .hikoo{
     font-family: 'La Belle Aurore', cursive;
-
-    position: fixed;
+    position: absolute;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 56px;
-    font-weight: 100;
     color: #666;
+    width: 800px;
+    padding-top: 1px; // TODO this fixes a 1px jump on transition, why?
 
     p{
         display: block;
@@ -67,8 +62,9 @@ footer{
         &.line2{ padding-left: linePadding(1); }
         &.line3{ padding-left: linePadding(2); }
 
-        &.author{
+        &.date-line{
             text-align: right;
+            font-size: 40%;
 
             a{
                 opacity: 0.4;
@@ -79,4 +75,23 @@ footer{
             }
         }
     }
+}
+
+
+.zen-enter {
+    opacity: 0.01;
+}
+
+.zen-enter.zen-enter-active {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+
+.zen-leave {
+    opacity: 1;
+}
+
+.zen-leave.zen-leave-active {
+    opacity: 0.01;
+    transition: opacity .1s ease-in;
 }

@@ -1,5 +1,6 @@
 'use strict';
 import React from 'react';
+import dateFormat from 'dateformat';
 
 const DEEP_LINK_URL = 'http://hikoo.us/show/';
 
@@ -8,7 +9,8 @@ export class Hikoo extends React.Component {
         super(props);
     }
     render() {
-        var h = this.props.hikoo;
+        var h = this.props.hikoo,
+            date = dateFormat(new Date(h.created_at), 'dddd, mmmm dS, yyyy');
 
         return (
             <div className="hikoo">
@@ -16,8 +18,8 @@ export class Hikoo extends React.Component {
                 <p className="line2">{h.line2}</p>
                 <p className="line3">{h.line3}</p>
                 <br /><br />
-                <p className="author">
-                    &ndash; {h.user_id} <a href={DEEP_LINK_URL + h.id} target="_blank">#</a>
+                <p className="date-line">
+                    &ndash; {date} <a href={DEEP_LINK_URL + h.id} target="_blank">#</a>
                 </p>
             </div>
         );

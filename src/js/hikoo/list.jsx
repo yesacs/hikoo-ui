@@ -1,23 +1,32 @@
 'use strict';
 import React from 'react';
+import addons from 'react/addons';
+
 import Hikoo from './hikoo.jsx';
+import Header from './list/header.jsx';
+import Footer from './list/footer.jsx';
+
 import _ from 'lodash';
 import jsonp from 'browser-jsonp';
 
+const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+const JSON_URL = 'http://hikoo.us/haiku/json/';
 
 export class HikooList extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            hikoos: []
+            hikoos: [],
+            selectedHikooIndex: 0,
+            userName: 'casey'
         };
     }
     buildHikoos(){
         return _.map(this.state.hikoos, function (h){
             return (
                 <li key={h.haiku.id}>
-                    <Hikoo hikoo={h.haiku} />
+
                 </li>
             );
         });
@@ -26,26 +35,38 @@ export class HikooList extends React.Component {
         var self = this;
 
         jsonp({
-            url: 'http://hikoo.us/haiku/json/casey', // TODO move to ui
+            url: JSON_URL + this.state.userName, // TODO move to ui
             success: function(data) {
                 self.setState({hikoos: data});
             }
         });
     }
+    setSelectedHikooIndex(newIndex){
+        this.setState({selectedHikooIndex: newIndex});
+    }
+
     render() {
+        var self = this,
+            hikoo = (function (){
+                if(self.state.hikoos.length > 0 && self.state.hikoos[self.state.selectedHikooIndex]){
+                    var h = self.state.hikoos[self.state.selectedHikooIndex].haiku;
+                    return (<Hikoo key={h.id} hikoo={h} />);
+                }else {
+                    return (<span></span>);
+                }
+            }());
+
         return (
             <section>
-                <header className="clearfix">
-                    <span className="left">Hikoo</span>
-                    <span className="right"><a href="#">Login</a></span>
-                </header>
+                <Header userName={this.state.userName} />
 
-                <ul className="hikoo-list">{this.buildHikoos()[0]}</ul>
+                <ReactCSSTransitionGroup transitionName="zen" transitionAppear={true}>
+                    {hikoo}
+                </ReactCSSTransitionGroup>
 
-                <footer>
-                    <span className="left"><a href="#">&lt;</a> The leaves change</span>
-                    <span className="right">8 minutes from now <a href="#">&gt;</a></span>
-                </footer>
+                <Footer hikoos={this.state.hikoos}
+                        selectedHikooIndex={this.state.selectedHikooIndex}
+                        setSelectedHikooIndex={this.setSelectedHikooIndex.bind(this)} />
             </section>
         );
     }
