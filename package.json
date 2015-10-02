@@ -1,6 +1,7 @@
 {
   "name": "hikoo-ui",
   "version": "0.0.0",
+  "license": "(MIT OR Apache-2.0)",
   "description": "A static asset version of the hikoo.us ui",
   "main": "index.js",
   "repository": {
