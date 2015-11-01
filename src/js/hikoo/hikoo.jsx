@@ -1,16 +1,16 @@
-'use strict';
-import React from 'react';
-import dateFormat from 'dateformat';
+'use strict'
+import React from 'react'
+import dateFormat from 'dateformat'
 
-const DEEP_LINK_URL = 'http://hikoo.us/show/';
+const DEEP_LINK_URL = 'http://hikoo.us/show/'
 
 export class Hikoo extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
     }
     render() {
         var h = this.props.hikoo,
-            date = dateFormat(new Date(h.created_at), 'dddd, mmmm dS, yyyy');
+            date = dateFormat(new Date(h.created_at), 'dddd, mmmm dS, yyyy')
 
         return (
             <div className="hikoo">
@@ -24,7 +24,7 @@ export class Hikoo extends React.Component {
                     &ndash; {date} <a href={DEEP_LINK_URL + h.id} target="_blank">#</a>
                 </p>
             </div>
-        );
+        )
     }
 }
 
@@ -32,6 +32,6 @@ Hikoo.propTypes = {
     line1: React.PropTypes.string,
     line2: React.PropTypes.string,
     line3: React.PropTypes.string
-};
+}
 
-export default Hikoo;
+export default Hikoo

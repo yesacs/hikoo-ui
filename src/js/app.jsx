@@ -1,5 +1,6 @@
-'use strict';
-import React from 'react';
-import HikooList from './hikoo/list.jsx';
+'use strict'
+import React from 'react'  // eslint-disable-line
+import ReactDOM from 'react-dom'
+import HikooList from './hikoo/list.jsx'
 
-React.render(<HikooList />, document.querySelector('#hikoos'), function (){});
+ReactDOM.render(<HikooList />, document.querySelector('#hikoos'), function (){})
