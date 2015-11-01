@@ -1,6 +1,9 @@
 'use strict';
 import React from 'react';
+
+/*eslint-disable */
 import addons from 'react/addons';
+/*eslint-disable */
 
 import Hikoo from './hikoo.jsx';
 import Header from './list/header.jsx';
