@@ -1,15 +1,13 @@
 'use strict'
-import React from 'react'
+import React  from 'react'
 import addons from 'react/addons'  // eslint-disable-line
-
-import Hikoo from './hikoo.jsx'
+import Hikoo  from './hikoo.jsx'
 import Header from './list/header.jsx'
 import Footer from './list/footer.jsx'
+import jsonp  from 'browser-jsonp'
 
-import jsonp from 'browser-jsonp'
-
-const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
-const JSON_URL = 'http://hikoo.us/haiku/json/'
+const  ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
+const  JSON_URL                = 'http://hikoo.us/haiku/json/'
 
 export class HikooList extends React.Component {
     constructor(props) {
