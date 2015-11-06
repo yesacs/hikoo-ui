@@ -40,12 +40,12 @@ export class Footer extends React.Component {
             return (
                 <footer>
                     <span className="left">
-                        <a href="#" data-hikoo-index={previousIndex} onClick={this.setSelectedHikooIndex.bind(this)}>&lt</a>
+                        <a href="#" data-hikoo-index={previousIndex} onClick={this.setSelectedHikooIndex.bind(this)}>&lt;</a>
                         {previousLineOne}
                     </span>
                     <span className="right">
                         {nextLineOne}
-                        <a href="#" data-hikoo-index={nextIndex} onClick={this.setSelectedHikooIndex.bind(this)}>&gt</a>
+                        <a href="#" data-hikoo-index={nextIndex} onClick={this.setSelectedHikooIndex.bind(this)}>&gt;</a>
                     </span>
                 </footer>
             )

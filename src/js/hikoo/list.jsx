@@ -20,28 +20,23 @@ export class HikooList extends React.Component {
         }
     }
     componentWillMount(){
-        var self = this
-
         jsonp({
             url: JSON_URL + this.state.userName, // TODO move to ui
-            success: function(data) {
-                self.setState({hikoos: data})
-            }
+            success: (data) => this.setState({hikoos: data})
         })
     }
     setSelectedHikooIndex(newIndex){
         this.setState({selectedHikooIndex: newIndex})
     }
     render() {
-        var self = this,
-            hikoo = (function (){
-                if(self.state.hikoos.length > 0 && self.state.hikoos[self.state.selectedHikooIndex]){
-                    var h = self.state.hikoos[self.state.selectedHikooIndex].haiku
-                    return (<Hikoo key={h.id} hikoo={h} />)
-                }else {
-                    return (<span></span>)
-                }
-            }())
+        var hikoo = (() => {
+            if(this.state.hikoos.length > 0 && this.state.hikoos[this.state.selectedHikooIndex]){
+                var h = this.state.hikoos[this.state.selectedHikooIndex].haiku
+                return (<Hikoo key={h.id} hikoo={h} />)
+            }else {
+                return (<span></span>)
+            }
+        }())
 
         return (
             <section>
